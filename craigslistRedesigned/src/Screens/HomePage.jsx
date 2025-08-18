@@ -2,6 +2,7 @@ import React from 'react';
 import "../Styles/Homepage.css";
 
 const HomePage = () => {
+  
   const categories = [
     { name: 'community', subcategories: ['activities', 'events', 'volunteers'] },
     { name: 'housing', subcategories: ['housing/real estate', 'housing swap', 'rooms/shared'] },
@@ -44,7 +45,9 @@ const HomePage = () => {
               <h2>{category.name}</h2>
               <ul>
                 {category.subcategories.map((sub, subIndex) => (
-                  <li key={subIndex}>{sub}</li>
+                  <li key={subIndex}>
+                    <a href="#">{sub}</a>
+                  </li>
                 ))}
               </ul>
             </div>

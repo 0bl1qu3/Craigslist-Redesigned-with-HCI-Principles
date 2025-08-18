@@ -81,6 +81,15 @@ main {
   margin-bottom: 5px;
 }
 
+.category li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.category li a:hover {
+  text-decoration: underline;
+}
+
 footer {
   margin-top: 20px;
   text-align: center;

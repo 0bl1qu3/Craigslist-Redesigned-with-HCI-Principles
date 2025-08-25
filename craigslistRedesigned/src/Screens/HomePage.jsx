@@ -2,16 +2,6 @@ import React from 'react';
 import "../Styles/Homepage.css";
 
 const HomePage = () => {
-  
-  const categories = [
-    { name: 'community', subcategories: ['activities', 'events', 'volunteers'] },
-    { name: 'housing', subcategories: ['housing/real estate', 'housing swap', 'rooms/shared'] },
-    { name: 'jobs', subcategories: ['accounting/finance', 'customer service', 'temp jobs'] },
-    { name: 'for sale', subcategories: ['appliances', 'furniture', 'toys/games'] },
-    { name: 'services', subcategories: ['beauty', 'legal', 'writing/editing'] },
-    { name: 'discussion forums', subcategories: ['apple', 'philosophy', 'politics'] }
-  ];
-
   return (
     <div className="homepage-container">
       <header>
@@ -34,26 +24,62 @@ const HomePage = () => {
           </select>
         </div>
       </header>
+
       <main>
+        {/* Calendar placeholder */}
         <div className="calendar">
-          {/* Simple calendar placeholder */}
           <div>event calendar</div>
         </div>
+
+        {/* Categories Wrapper */}
         <div className="categories">
-          {categories.map((category, index) => (
-            <div key={index} className="category">
-              <h2>{category.name}</h2>
-              <ul>
-                {category.subcategories.map((sub, subIndex) => (
-                  <li key={subIndex}>
-                    <a href="#">{sub}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+  <div className="category featured jobs-category">
+    <h2>Jobs</h2>
+    <p>Find jobs in finance, admin, engineering, design, science, and more.</p>
+    <button className="view-all">View All</button>
+  </div>
+
+  <div className="category services-category">
+    <h2>Services</h2>
+    <p>Find local services from beauty to legal to writing.</p>
+    <button className="view-all">View All</button>
+  </div>
+
+  <div className="category housing-category">
+    <h2>Housing</h2>
+    <p>Browse homes, rentals, swaps, and shared spaces.</p>
+    <button className="view-all">View All</button>
+  </div>
+
+  <div className="category discussion-category">
+    <h2>Discussion</h2>
+    <p>Join conversations on technology, politics, and more.</p>
+    <button className="view-all">View All</button>
+  </div>
+
+  <div className="category community-category">
+    <h2>Community</h2>
+    <p>Discover events, activities, and volunteer opportunities.</p>
+    <button className="view-all">View All</button>
+  </div>
+
+  <div className="category for-sale-category">
+    <h2>For Sale</h2>
+    <p>Find appliances, furniture, electronics, and more.</p>
+    <button className="view-all">View All</button>
+  </div>
+
+  <div className="category gigs-category">
+    <h2>Gigs</h2>
+    <p>Explore short-term and freelance opportunities.</p>
+    <button className="view-all">View All</button>
+  </div>
+
+
+</div>
+
       </main>
+
       <footer>
         <p>© 2025 craigslist | help | safety | privacy | terms | about | app | sitemap</p>
       </footer>

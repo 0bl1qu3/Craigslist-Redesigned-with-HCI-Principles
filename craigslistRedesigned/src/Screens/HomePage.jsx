@@ -8,69 +8,88 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import InputAdornment from "@mui/material/InputAdornment";
-import Box from "@mui/material/Box";
+import Button from '@mui/material/Button';
 
 // ✅ Icons
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import LocationOnIcon from "@mui/icons-material/LocationOn"
 import CategoryIcon from "@mui/icons-material/Category";
+import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 
 import { Calendar } from "@mantine/dates";
 
-const autocompleteOptions = ["sandy", "mandy", "charles"];
+// ✅ Import the AppBar component
+import ResponsiveAppBar from "../Components/ResponsiveAppBar";
+
+const categoryOptions = ["sandy", "mandy", "charles"];
+const locationOptions = ["South Africa", "Cape Town", "Durban", "Johannesburg", "Pretoria", "Worldwide"];
 
 const HomePage = () => {
-  const [location, setLocation] = useState("");
-
-  const handleChange = (event) => {
-    setLocation(event.target.value);
-  };
+  const [location, setLocation] = useState("Worldwide");
 
   return (
-    <div className="homepage-container">
-      <header>
-        <h1>Johannesburg Craigslist</h1>
+    <>
+    <ResponsiveAppBar />
 
-        <div className="search-bar">
-          <input type="text" placeholder="search craigslist" />
-          <button>post an ad</button>
+    <div className="homepage-container">
+      {/* ✅ Add App Bar at the very top */}
+
+      <header>
+        <div className="header-top">
+          <h1>Location: {location}</h1>
+
+          <Button variant="contained" endIcon={<ShoppingCartIcon />}>
+            Post an Ad
+          </Button>
         </div>
 
         <div className="language-select">
-
-          <select>
-            <option value="south-africa">south africa</option>
-            <option value="cape-town">cape town</option>
-            <option value="durban">durban</option>
-            <option value="johannesburg">johannesburg</option>
-            <option value="pretoria">pretoria</option>
-            <option value="worldwide">worldwide</option>
-          </select>
+          <TextField
+            fullWidth
+            id="outlined-search"
+            label="Search Craigslist"
+            variant="outlined"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+          />
 
           {/* Location Select with Icon */}
-          <FormControl fullWidth sx={{ width: 300 }}>
-            <InputLabel id="location-select-label">Location</InputLabel>
-            <Select
-              labelId="location-select-label"
-              id="location-select"
+            <Autocomplete
+              disablePortal
               value={location}
-              onChange={handleChange}
-              startAdornment={
-                <InputAdornment position="start">
-                  <LocationOnIcon />
-                </InputAdornment>
-              }
-            >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl>
+              onChange={(event, newValue) => {
+                if (newValue) setLocation(newValue);
+              }}
+              options={locationOptions}
+              sx={{ width: 500, height: "auto" }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Location"
+                  InputProps={{
+                    ...params.InputProps,
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <LocationOnIcon />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              )}
+            />
 
           {/* Category Autocomplete with Icon */}
           <Autocomplete
             disablePortal
-            options={autocompleteOptions}
-            sx={{ width: 300, height: 'auto' }}
+            defaultValue={"All"}
+            options={categoryOptions}
+            sx={{ width: 400, height: "auto" }}
             renderInput={(params) => (
               <TextField
                 {...params}
@@ -145,6 +164,7 @@ const HomePage = () => {
         <p>© 2025 craigslist | help | safety | privacy | terms | about | app | sitemap</p>
       </footer>
     </div>
+    </>
   );
 };
 

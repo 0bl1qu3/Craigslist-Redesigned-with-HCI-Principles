@@ -5,21 +5,47 @@
 .homepage-container {
   font-family: Arial, sans-serif;
   color: #fff;
-  background-color: #000;
   width: 100vw;
+  height: auto;
 }
 
 header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* full width */
   margin-bottom: 20px;
 }
 
-h1 {
-  color: #ffffff;
-  margin-bottom: 10px;
+/* First row: h1 + post button side by side on the right */
+.header-top {
+  display: flex;
+  justify-content: flex-end; /* push to right */
+  align-items: center;
+  gap: 25px; /* space between h1 and button */
+  margin-top: 80px;
+  margin-bottom: 15px;
+  padding-right: 30px;
 }
+
+.header-top h1 {
+  margin: 0;
+  font-size: small;
+  color: #000000;
+}
+
+/* Style the post button consistently */
+.header-top button {
+  padding: 8px 14px;
+  background-color: #00ff00;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.header-top button:hover {
+  background-color: #00cc00;
+}
+
 
 .search-bar {
   display: flex;
@@ -32,16 +58,12 @@ h1 {
   width: 200px;
 }
 
-.search-bar button {
-  padding: 5px 10px;
-  background-color: #00ff00;
-  border: none;
-  cursor: pointer;
-}
 
 .language-select {
   display: flex;
   gap: 10px;
+  justify-content: center; /* keep inputs centered */
+  padding: 20px;
 }
 
 .language-select select {
@@ -57,7 +79,7 @@ main {
   flex-shrink: 0; /* prevents it from squishing */
   width: auto;   /* consistent width */
   height: auto;
-  background-color: #333;
+  background-color: #fbe347;
   border-radius: 10px;
   margin-left: 20px;
   overflow: hidden;
@@ -75,7 +97,7 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   background: 
-    linear-gradient(to bottom right, rgba(230, 206, 151, 0.6), rgba(0,0,0,0.2)),
+    linear-gradient(to bottom right, rgba(255, 185, 22, 0.6), rgba(0,0,0,0.2)),
     url('../Images/monke.png');
   background-size: cover;
   background-position: center;

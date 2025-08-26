@@ -114,7 +114,7 @@ main {
 /* Larger feature card (like Jobs) */
 .category.featured {
   grid-column: span 2; /* makes it span across 2 columns */
-  height: 200px;       /* taller */
+  height: 240px;       /* taller */
 }
 
 .category.services-category {

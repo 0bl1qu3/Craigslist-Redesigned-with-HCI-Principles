@@ -1,8 +1,12 @@
+#root {
+  overflow-x: hidden;
+}
+
 .homepage-container {
   font-family: Arial, sans-serif;
   color: #fff;
   background-color: #000;
-  padding: 20px;
+  width: 100vw;
 }
 
 header {
@@ -50,9 +54,13 @@ main {
 }
 
 .calendar {
-  width: 200px;
+  flex-shrink: 0; /* prevents it from squishing */
+  width: auto;   /* consistent width */
+  height: auto;
   background-color: #333;
-  padding: 10px;
+  border-radius: 10px;
+  margin-left: 20px;
+  overflow: hidden;
 }
 
 .categories {

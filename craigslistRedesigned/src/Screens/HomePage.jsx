@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../Styles/Homepage.css";
 
 import TextField from "@mui/material/TextField";
@@ -119,7 +120,7 @@ const HomePage = () => {
           <div className="category featured jobs-category">
             <h2>Jobs</h2>
             <p>Find jobs in finance, admin, engineering, design, science, and more.</p>
-            <button className="view-all">View All</button>
+            <Link to="/category/jobs" className="view-all">View All</Link>
           </div>
 
           <div className="category services-category">

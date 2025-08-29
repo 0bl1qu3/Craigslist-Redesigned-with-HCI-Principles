@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
 import { FaPeace } from "react-icons/fa";
+import { Link, Navigate } from 'react-router-dom';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -37,8 +38,8 @@ function ResponsiveAppBar() {
             <Typography
               variant="h6"
               noWrap
-              component="a"
-              href="/"
+              component={Link}
+              to="/"
               sx={{
                 fontFamily: 'monospace',
                 fontWeight: 700,
@@ -87,8 +88,8 @@ function ResponsiveAppBar() {
             <Typography
               variant="h5"
               noWrap
-              component="a"
-              href="/"
+              component={Link}
+              to="/"
               sx={{
                 fontFamily: 'monospace',
                 fontWeight: 700,

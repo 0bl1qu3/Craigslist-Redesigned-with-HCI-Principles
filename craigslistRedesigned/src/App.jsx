@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import HomePage from './Screens/HomePage';
 import CategoryPage from "./Screens/CategoryPage";
 
@@ -11,12 +11,12 @@ function App() {
 
   return (
    <MantineProvider>
-     <Router>
+     <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/category/:name" element={<CategoryPage />} />
       </Routes>
-    </Router>
+    </HashRouter>
    </MantineProvider>
   )
 }

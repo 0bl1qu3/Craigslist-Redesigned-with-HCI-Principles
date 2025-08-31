@@ -54,7 +54,37 @@ import WorkOutlineIcon from "@mui/icons-material/WorkOutline"; // Freelance
 import AccessTimeIcon from "@mui/icons-material/AccessTime"; // Short-Term
 import PublicIcon from "@mui/icons-material/Public"; // Remote
 
-// ✅ Subcategories with icons
+// ✅ Import new icons
+import MilitaryTechIcon from "@mui/icons-material/MilitaryTech"; // Government
+import SecurityIcon from "@mui/icons-material/Security"; // Security
+import CodeIcon from "@mui/icons-material/Code"; // Software
+import MovieCreationIcon from "@mui/icons-material/MovieCreation"; // Film / Video
+import ConstructionIcon from "@mui/icons-material/Construction"; // Labour
+import AgricultureIcon from "@mui/icons-material/Agriculture"; // Farm / Garden
+import HandymanIcon from "@mui/icons-material/Handyman"; // Skilled Trade
+import BrushIcon from "@mui/icons-material/Brush"; // Creative
+import CampaignIcon from "@mui/icons-material/Campaign"; // Politics
+import ForumIcon from "@mui/icons-material/Forum"; // Debates
+import MusicNoteIcon from "@mui/icons-material/MusicNote"; // Raves
+import FastfoodIcon from "@mui/icons-material/Fastfood"; // Food
+import MosqueIcon from "@mui/icons-material/Mosque"; // Religion
+import ScienceIcon from "@mui/icons-material/Science"; // Science
+import SportsSoccerIcon from "@mui/icons-material/SportsSoccer"; // Sports
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline"; // Help
+import TravelExploreIcon from "@mui/icons-material/TravelExplore"; // Travel
+import FavoriteIcon from "@mui/icons-material/Favorite"; // Beauty / Health
+import DiamondIcon from "@mui/icons-material/Diamond"; // Jewellery
+import BookIcon from "@mui/icons-material/Book"; // Books
+import ToysIcon from "@mui/icons-material/Toys"; // Toys / Games
+import TerminalIcon from "@mui/icons-material/Terminal"; // Software (For Sale)
+import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing"; // Heavy Equipment
+import GarageIcon from "@mui/icons-material/Garage"; // Garage Sale
+import BuildIcon from "@mui/icons-material/Build"; // Auto Parts
+import BusinessIcon from "@mui/icons-material/Business"; // Office / Commercial
+import HouseIcon from "@mui/icons-material/House"; // SubLets / Temporary
+
+
+// ✅ Subcategories with updated icons
 const subcategories = {
   Jobs: [
     { name: "Accounting / Finance", icon: <AccountBalanceIcon /> },
@@ -62,41 +92,77 @@ const subcategories = {
     { name: "Education", icon: <SchoolIcon /> },
     { name: "Engineering", icon: <EngineeringIcon /> },
     { name: "Healthcare", icon: <LocalHospitalIcon /> },
+    { name: "Government", icon: <MilitaryTechIcon /> },
+    { name: "Housing / Real Estate", icon: <ApartmentIcon /> },
+    { name: "Security", icon: <SecurityIcon /> },
+    { name: "Software", icon: <CodeIcon /> },
+    { name: "Film / Video", icon: <MovieCreationIcon /> },
+    { name: "Writing / Editing", icon: <EditIcon /> },
+    { name: "Labour", icon: <ConstructionIcon /> },
   ],
   Services: [
     { name: "Beauty", icon: <FaceRetouchingNaturalIcon /> },
     { name: "Legal", icon: <GavelIcon /> },
-    { name: "Writing", icon: <EditIcon /> },
     { name: "Tutoring", icon: <MenuBookIcon /> },
+    { name: "Writing / Editing", icon: <EditIcon /> },
+    { name: "Housing / Real Estate", icon: <ApartmentIcon /> },
+    { name: "Transport", icon: <LocalShippingIcon /> },
+    { name: "Farm / Garden", icon: <AgricultureIcon /> },
+    { name: "Skilled Trade", icon: <HandymanIcon /> },
+    { name: "Creative", icon: <BrushIcon /> },
   ],
   Housing: [
     { name: "Apartments", icon: <ApartmentIcon /> },
     { name: "Shared Rooms", icon: <MeetingRoomIcon /> },
     { name: "House Swap", icon: <SyncAltIcon /> },
     { name: "Rentals", icon: <HomeIcon /> },
+    { name: "SubLets / Temporary", icon: <HouseIcon /> },
+    { name: "Office / Commercial", icon: <BusinessIcon /> },
   ],
   Community: [
     { name: "Events", icon: <EventIcon /> },
     { name: "Volunteering", icon: <VolunteerActivismIcon /> },
     { name: "Activities", icon: <SportsEsportsIcon /> },
+    { name: "Classes", icon: <SchoolIcon /> },
+    { name: "Politics", icon: <CampaignIcon /> },
+    { name: "Debates", icon: <ForumIcon /> },
+    { name: "Raves", icon: <MusicNoteIcon /> },
   ],
   Discussion: [
     { name: "Technology", icon: <ComputerIcon /> },
     { name: "Politics", icon: <HowToVoteIcon /> },
     { name: "Lifestyle", icon: <SelfImprovementIcon /> },
+    { name: "Food", icon: <FastfoodIcon /> },
+    { name: "Religion", icon: <MosqueIcon /> },
+    { name: "Science", icon: <ScienceIcon /> },
+    { name: "Gaming", icon: <SportsEsportsIcon /> },
+    { name: "Sports", icon: <SportsSoccerIcon /> },
+    { name: "Jobs", icon: <WorkOutlineIcon /> },
+    { name: "Help", icon: <HelpOutlineIcon /> },
+    { name: "Travel", icon: <TravelExploreIcon /> },
   ],
   "For Sale": [
     { name: "Furniture", icon: <ChairIcon /> },
     { name: "Electronics", icon: <DevicesIcon /> },
     { name: "Vehicles", icon: <DirectionsCarIcon /> },
     { name: "Appliances", icon: <KitchenIcon /> },
+    { name: "Beauty / Health", icon: <FavoriteIcon /> },
+    { name: "Jewellery", icon: <DiamondIcon /> },
+    { name: "Books", icon: <BookIcon /> },
+    { name: "Toys / Games", icon: <ToysIcon /> },
+    { name: "Software", icon: <TerminalIcon /> },
+    { name: "Heavy Equipment", icon: <PrecisionManufacturingIcon /> },
+    { name: "Garage Sale", icon: <GarageIcon /> },
+    { name: "Auto Parts", icon: <BuildIcon /> },
   ],
   Gigs: [
     { name: "Freelance", icon: <WorkOutlineIcon /> },
     { name: "Short-Term", icon: <AccessTimeIcon /> },
     { name: "Remote", icon: <PublicIcon /> },
-  ],
+
+  ]
 };
+
 
 // ✅ Category options for dropdown (with "All")
 const categoryOptions = ["All", ...Object.keys(subcategories)];

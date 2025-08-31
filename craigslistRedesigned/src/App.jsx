@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/category/:name" element={<CategoryPage />} />
-          <Route path="/category/:name/:subname" element={<SubCategoryPage />} />
+          <Route path="/category/:name/:sub" element={<SubCategoryPage />} />
         </Routes>
       </HashRouter>
     </MantineProvider>

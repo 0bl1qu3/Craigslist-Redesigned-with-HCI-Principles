@@ -98,7 +98,7 @@ main {
   justify-content: flex-start;
   background: 
     linear-gradient(to bottom right, rgba(36, 51, 20, 0.6), rgba(0,0,0,0.2)),
-    url('./Images/Jobs1.png');
+    url('/Images/Jobs1.png');
   background-position: center;
   color: #fff;
   border-radius: 10px;
@@ -121,7 +121,7 @@ main {
   height: 500px;
     background: 
     linear-gradient(to bottom right, rgba(121, 89, 14, 0.6), rgba(0,0,0,0.2)),
-    url('./Images/services1.jpg');
+    url('/Images/services1.jpg');
       background-size: cover;
   background-position: center;
 }
@@ -130,7 +130,7 @@ main {
 .category.housing {
   background: 
     linear-gradient(to bottom right, rgba(113, 72, 45, 0.6), rgba(0,0,0,0.2)),
-    url('./Images/housing1.jpg');
+    url('/Images/housing1.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -139,7 +139,7 @@ main {
 .category.community {
   background: 
     linear-gradient(to bottom right, rgba(74, 28, 51, 0.6), rgba(0,0,0,0.2)),
-    url('./Images/community1.jpg');
+    url('/Images/community1.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -147,7 +147,7 @@ main {
 .category.discussion {
 background: 
     linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0,0,0,0.2)),
-    url('./Images/discussion1.jpg');
+    url('/Images/discussion1.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -155,7 +155,7 @@ background:
 .category.for-sale {
   background: 
     linear-gradient(to bottom right, rgba(28, 62, 71, 0.6), rgba(0,0,0,0.2)),
-    url('./Images/forsale1.png');
+    url('/Images/forsale1.png');
   background-size: cover;
   background-position: center;
 }
@@ -163,7 +163,7 @@ background:
 .category.gigs {
   background: 
     linear-gradient(to bottom right, rgba(86, 36, 61, 0.6), rgba(0,0,0,0.2)),
-    url('./Images/gigs1.jpg');
+    url('/Images/gigs1.jpg');
   background-size: cover;
   background-position: center;
 }

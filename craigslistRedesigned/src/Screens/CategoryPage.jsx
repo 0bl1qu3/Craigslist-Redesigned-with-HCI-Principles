@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ResponsiveAppBar from "../Components/ResponsiveAppBar";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import {
   Box,
   Button,
@@ -174,6 +174,12 @@ const CategoryPage = () => {
   const category = name || "Category";
   const [searchQuery, setSearchQuery] = useState("");
 
+  // ✅ Filter subcategories based on searchQuery
+const filteredSubcategories =
+  subcategories[category]?.filter((sub) =>
+    sub.name.toLowerCase().includes(searchQuery.toLowerCase())
+  ) || [];
+
   return (
     <>
       <ResponsiveAppBar />
@@ -251,49 +257,54 @@ const CategoryPage = () => {
           />
         </Box>
 
-        {/* ✅ Subcategories Grid with unique icons */}
-        {subcategories[category] && (
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: 3,
-              marginTop: "30px",
-              maxWidth: "1000px",
-              marginX: "auto",
-            }}
-          >
-            {subcategories[category].map((sub, index) => (
-              <Button
-                key={index}
-                component={Link}
-                to={`/category/${category}/${encodeURIComponent(sub.name)}`}
-                variant="outlined"
-                sx={{
-                  backgroundColor: "white",
-                  color: "black",
-                  borderRadius: 3,
-                  padding: "15px",
-                  fontSize: "1rem",
-                  fontWeight: "bold",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  boxShadow: 2,
-                  "&:hover": {
-                    backgroundColor: "#ffd700",
-                    transform: "scale(1.05)",
-                  },
-                  transition: "all 0.2s ease-in-out",
-                }}
-              >
-                {sub.icon}
-                {sub.name}
-                {sub.icon}
-              </Button>
-            ))}
-          </Box>
-        )}
+{/* ✅ Subcategories Grid with unique icons */}
+{filteredSubcategories.length > 0 ? (
+  <Box
+    sx={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+      gap: 3,
+      marginTop: "30px",
+      maxWidth: "1000px",
+      marginX: "auto",
+    }}
+  >
+    {filteredSubcategories.map((sub, index) => (
+      <Button
+        key={index}
+        component={Link}
+        to={`/category/${category}/${encodeURIComponent(sub.name)}`}
+        variant="outlined"
+        sx={{
+          backgroundColor: "white",
+          color: "black",
+          borderRadius: 3,
+          padding: "15px",
+          fontSize: "1rem",
+          fontWeight: "bold",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          boxShadow: 2,
+          "&:hover": {
+            backgroundColor: "#ffd700",
+            transform: "scale(1.05)",
+          },
+          transition: "all 0.2s ease-in-out",
+        }}
+      >
+        {sub.icon}
+        {sub.name}
+        {sub.icon}
+      </Button>
+    ))}
+  </Box>
+) : (
+  <Typography variant="h6" color="text.secondary" sx={{ mt: 4 }}>
+    No results found.
+  </Typography>
+)}
+
       </div>
     </>
   );

@@ -77,7 +77,7 @@ main {
 .calendar {
   flex-shrink: 0; /* prevents it from squishing */
   width: auto;   /* consistent width */
-  height: auto;
+  height: fit-content;
   background-color: #fbe347;
   border-radius: 10px;
   margin-left: 20px;
@@ -97,29 +97,75 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   background: 
-    linear-gradient(to bottom right, rgba(255, 185, 22, 0.6), rgba(0,0,0,0.2)),
-    url('../Images/monke.png');
-  background-size: cover;
+    linear-gradient(to bottom right, rgba(36, 51, 20, 0.6), rgba(0,0,0,0.2)),
+    url('./Images/Jobs1.png');
   background-position: center;
   color: #fff;
   border-radius: 10px;
   padding: 20px;
   overflow: hidden;
-  height: 200px; /* default card height */
+  height: 250px; /* default card height */
   transition: transform 0.3s ease;
 }
 
 
 
 /* Larger feature card (like Jobs) */
-.category.featured {
+.category.jobs {
   grid-column: span 2; /* makes it span across 2 columns */
   height: 240px;       /* taller */
 }
 
-.category.services-category {
+.category.services {
   grid-row: span 2;
-  height: 460px
+  height: 500px;
+    background: 
+    linear-gradient(to bottom right, rgba(121, 89, 14, 0.6), rgba(0,0,0,0.2)),
+    url('./Images/services1.jpg');
+      background-size: cover;
+  background-position: center;
+}
+
+/* Housing category */
+.category.housing {
+  background: 
+    linear-gradient(to bottom right, rgba(113, 72, 45, 0.6), rgba(0,0,0,0.2)),
+    url('./Images/housing1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Community category */
+.category.community {
+  background: 
+    linear-gradient(to bottom right, rgba(74, 28, 51, 0.6), rgba(0,0,0,0.2)),
+    url('./Images/community1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.category.discussion {
+background: 
+    linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0,0,0,0.2)),
+    url('./Images/discussion1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.category.for-sale {
+  background: 
+    linear-gradient(to bottom right, rgba(28, 62, 71, 0.6), rgba(0,0,0,0.2)),
+    url('./Images/forsale1.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.category.gigs {
+  background: 
+    linear-gradient(to bottom right, rgba(86, 36, 61, 0.6), rgba(0,0,0,0.2)),
+    url('./Images/gigs1.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .category:hover {
@@ -160,7 +206,6 @@ main {
 }
 
 /* View All button */
-/* View All button */
 .view-all {
   position: absolute;
   bottom: 15px;
@@ -184,4 +229,49 @@ footer {
   margin-top: 20px;
   text-align: center;
   font-size: 12px;
+}
+
+.fake-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 6px 0;
+}
+
+.fake-link:hover {
+  color: darkblue;
+}
+
+.calendar-links {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Wraps both calendar and links */
+.calendar-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* calendar at top, links at bottom */
+  align-items: center;            /* center horizontally */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.calendar-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center horizontally */
+  margin-top: 20px;
+}
+
+.fake-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 6px 0;
+}
+
+.fake-link:hover {
+  color: darkblue;
 }

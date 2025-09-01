@@ -15,8 +15,12 @@ import MenuItem from '@mui/material/MenuItem';
 import { FaPeace } from "react-icons/fa";
 import { Link, Navigate } from 'react-router-dom';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [
+  { name: 'Products', path: '/category/For Sale' },
+  { name: 'Blog', path: '/category/Discussion' }
+];
+
+const settings = ['Profile', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -74,11 +78,18 @@ function ResponsiveAppBar() {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                </MenuItem>
-              ))}
+{pages.map((page) => (
+  <Button
+    key={page.name}
+    component={Link}
+    to={page.path}
+    onClick={handleCloseNavMenu}
+    sx={{ my: 2, display: 'block' }}
+  >
+    {page.name}
+  </Button>
+))}
+
             </Menu>
           </Box>
 
@@ -104,15 +115,19 @@ function ResponsiveAppBar() {
 
           {/* Nav Buttons (desktop only) */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+{pages.map((page) => (
+  <MenuItem
+    key={page.name}
+    component={Link}
+    to={page.path}
+    onClick={handleCloseNavMenu}
+  >
+    <Typography sx={{ textAlign: 'center' }}>
+      {page.name}
+    </Typography>
+  </MenuItem>
+))}
+
           </Box>
 
           {/* User Avatar */}

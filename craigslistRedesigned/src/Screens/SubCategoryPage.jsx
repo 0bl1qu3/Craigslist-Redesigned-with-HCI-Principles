@@ -38,7 +38,7 @@ const mockItems = [
     price: "R1200",
     location: "Johannesburg",
     date: "8/20",
-    image: "/assets/item1.jpg",
+    image: "./Images/small-box-mockup.jpg",
   },
   {
     id: 2,
@@ -46,7 +46,7 @@ const mockItems = [
     price: "R3400",
     location: "Cape Town",
     date: "8/21",
-    image: "/assets/item2.jpg",
+    image: "./Images/a4-paper-mockup.jpg",
   },
   {
     id: 3,
@@ -54,7 +54,7 @@ const mockItems = [
     price: "R560",
     location: "Durban",
     date: "8/22",
-    image: "/assets/item3.jpg",
+    image: "./Images/landscape-a4-paper-mockup.jpg",
   },
   {
     id: 4,
@@ -62,7 +62,7 @@ const mockItems = [
     price: "R7800",
     location: "Pretoria",
     date: "8/23",
-    image: "/assets/item4.jpg",
+    image: "./Images/person-holding-square-mockup.jpg",
   },
   {
     id: 5,
@@ -70,7 +70,7 @@ const mockItems = [
     price: "R950",
     location: "Florida",
     date: "8/24",
-    image: "/assets/item5.jpg",
+    image: "./Images/small-box-mockup.jpg",
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ const mockItems = [
     price: "R4300",
     location: "Johannesburg",
     date: "8/25",
-    image: "/assets/item6.jpg",
+    image: "./Images/small-paper-mockup.jpg",
   },
   {
     id: 7,
@@ -86,7 +86,7 @@ const mockItems = [
     price: "R2100",
     location: "Cape Town",
     date: "8/26",
-    image: "/assets/item7.jpg",
+    image: "./Images/square-paper-mockup.jpg",
   },
   {
     id: 8,
@@ -94,7 +94,7 @@ const mockItems = [
     price: "R670",
     location: "Durban",
     date: "8/27",
-    image: "/assets/item8.jpg",
+    image: "./Images/small-box-mockup.jpg",
   },
   {
     id: 9,
@@ -102,7 +102,7 @@ const mockItems = [
     price: "R8900",
     location: "Pretoria",
     date: "8/28",
-    image: "/assets/item9.jpg",
+    image: "./Images/a4-paper-mockup.jpg",
   },
   {
     id: 10,
@@ -110,7 +110,7 @@ const mockItems = [
     price: "R2500",
     location: "Florida",
     date: "8/29",
-    image: "/assets/item10.jpg",
+    image: "./Images/landscape-a4-paper-mockup.jpg",
   },
   {
     id: 11,
@@ -118,7 +118,7 @@ const mockItems = [
     price: "R1750",
     location: "Johannesburg",
     date: "8/21",
-    image: "/assets/item11.jpg",
+    image: "./Images/person-holding-square-mockup.jpg",
   },
   {
     id: 12,
@@ -126,7 +126,7 @@ const mockItems = [
     price: "R6400",
     location: "Cape Town",
     date: "8/22",
-    image: "/assets/item12.jpg",
+    image: "./Images/small-box-mockup.jpg",
   },
   {
     id: 13,
@@ -134,7 +134,7 @@ const mockItems = [
     price: "R980",
     location: "Durban",
     date: "8/23",
-    image: "/assets/item13.jpg",
+    image: "./Images/small-paper-mockup.jpg",
   },
   {
     id: 14,
@@ -142,7 +142,7 @@ const mockItems = [
     price: "R7200",
     location: "Pretoria",
     date: "8/24",
-    image: "/assets/item14.jpg",
+    image: "./Images/square-paper-mockup.jpg",
   },
   {
     id: 15,
@@ -150,7 +150,7 @@ const mockItems = [
     price: "R3100",
     location: "Florida",
     date: "8/25",
-    image: "/assets/item15.jpg",
+    image: "./Images/small-box-mockup.jpg",
   },
   {
     id: 16,
@@ -158,7 +158,7 @@ const mockItems = [
     price: "R850",
     location: "Johannesburg",
     date: "8/26",
-    image: "/assets/item16.jpg",
+    image: "./Images/a4-paper-mockup.jpg",
   },
   {
     id: 17,
@@ -166,7 +166,7 @@ const mockItems = [
     price: "R4600",
     location: "Cape Town",
     date: "8/27",
-    image: "/assets/item17.jpg",
+    image: "./Images/landscape-a4-paper-mockup.jpg",
   },
   {
     id: 18,
@@ -174,7 +174,7 @@ const mockItems = [
     price: "R2999",
     location: "Durban",
     date: "8/28",
-    image: "/assets/item18.jpg",
+    image: "./Images/person-holding-square-mockup.jpg",
   },
   {
     id: 19,
@@ -182,7 +182,7 @@ const mockItems = [
     price: "R780",
     location: "Pretoria",
     date: "8/29",
-    image: "/assets/item19.jpg",
+    image: "./Images/small-box-mockup.jpg",
   },
   {
     id: 20,
@@ -190,7 +190,7 @@ const mockItems = [
     price: "R5200",
     location: "Florida",
     date: "8/30",
-    image: "/assets/item20.jpg",
+    image: "./Images/small-paper-mockup.jpg",
   },
 ];
 
@@ -281,7 +281,7 @@ const subCategoryOptions = {
 };
 
 
-const locations = ["Johannesburg", "Durban", "Cape Town", "Pretoria", "Florida"];
+const locations = ["Johannesburg", "Durban", "Cape Town", "Pretoria", "Florida", "Worldwide"];
 
 // Universal checkbox filter options
 const ratingOptions = ["1 Star", "2 Star", "3 Star", "4 Star", "5 Star"];
@@ -295,7 +295,7 @@ export default function SubCategoryPage() {
 
   // States
   const [view, setView] = useState("grid");
-  const [location, setLocation] = useState("Johannesburg");
+  const [location, setLocation] = useState("Worldwide");
   const [priceRange, setPriceRange] = useState([0, 10000]);
 
   const [selectedConditions, setSelectedConditions] = useState([]);
